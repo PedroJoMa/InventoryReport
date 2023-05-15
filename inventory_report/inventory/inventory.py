@@ -4,6 +4,10 @@ import xmltodict
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 
+# from inventory_report.importer.csv_importer import CSVImporter
+# from inventory_report.importer.json_importer import JSONImporter
+# from inventory_report.importer.xml_importer import XMLImporter
+
 
 class Inventory:
     @staticmethod
@@ -47,3 +51,14 @@ class Inventory:
             return Inventory.relatorio_json(path, type_report)
         if path.endswith(".xml"):
             return Inventory.relatorio_xml(path, type_report)
+
+
+# class Inventory:
+#     def __init__(self, __file_importer):
+#         __file_importer = __file_importer
+
+#     def import_data(self, path, type_report):
+#         if type_report == "simples":
+#             return SimpleReport.generate(self.__file_importer(path))
+#         elif type_report == "completo":
+#             return CompleteReport.generate(self.__file_importer(path))
